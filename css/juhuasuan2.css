@@ -1,6 +1,10 @@
+ body{ 	
+	overflow: hidden;
+ }
  header{
 	width: 16rem;
 	height: 2.525rem;
+	position: relative;
 	background:-webkit-linear-gradient(#fff,#ebebeb);
 }
 header .left{
@@ -206,12 +210,14 @@ section .sort3 .sort5 .jutou2{
 }
 footer{
 	width: 16rem;
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 16rem;
 	-webkit-transform:translate3d(0,0,0);
 }
 footer .scan{
 	position: absolute;
-	left: 16rem;
+	left: 0;
 	top: 0;
 	width: 2rem;
 	height: 25rem;
@@ -224,7 +230,7 @@ footer .scan{
 }
 footer .scan1{
 	position: absolute;
-	right: -16rem;
+	right: 0;
 	top: 0;
 	width: 14rem;
 	height: 25rem;
@@ -280,6 +286,7 @@ footer .scan1 .scan3{
 	padding-left: 1.525rem;
 	padding-top: 1rem;
 	overflow: hidden;
+	display: none;
 }
 footer .scan1 .scan3 li{
 	width: 6.125rem;

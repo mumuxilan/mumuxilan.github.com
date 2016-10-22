@@ -143,14 +143,32 @@
 			var oRight=document.getElementById('right');
 			var oFooter=document.getElementById('footer');
 			var oScan=document.getElementById('scan');
+			var oScan2=document.getElementById('scan2');
+			var aA=oScan2.getElementsByTagName('a');
+			var aUl=oFooter.getElementsByTagName('ul');
+			//
+
+			//显示隐藏
 			oRight.addEventListener('touchend',function(){
 				oFooter.style.webkitTransition='1s all ease';
-				oFooter.style.webkitTransform='translate3d(-320px,0,0)';
+				oFooter.style.webkitTransform='translate3d(-16rem,0,0)';
 			},false);
 			oScan.addEventListener('touchend',function(){
 				oFooter.style.webkitTransition='1s all ease';
 				oFooter.style.webkitTransform='translate3d(0,0,0)';
 			},false);
+			//切换
+			for(var i=0;i<aA.length;i++){
+				aA[i].index=i;
+				aA[i].addEventListener('touchend',function(){
+					for(var j=0;j<aA.length;j++){
+						aA[j].className='on';
+						aUl[j].style.display='none';
+					}
+					this.className='';
+					aUl[this.index].style.display='block';
+				},false)
+			}
 		}
 	},false);
 })();
