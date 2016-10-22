@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Document</title>
+	<script>
+	</script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			background: #000;
+		}
+		#div{
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			width: 300px;
+			height: 300px;
+			border: 15px solid #000;
+			border-radius: 50%;
+			box-shadow: 2px 2px 100px #FFF;
+			margin: 100px auto;
+			text-align: center;
+			line-height: 300px;
+			font-size: 50px;
+			font-weight: bold;			
+			text-shadow: 3px 3px #000;
+		}
+		#div .hour{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -6px;
+			margin-top: -60px;
+			width: 12px;
+			height: 60px;
+			background: #000;
+			border-radius: 50% 50% 0 0;
+			transform-origin:bottom center;
+		}
+		#div .min{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -4px;
+			margin-top: -90px;
+			width: 8px;
+			height: 95px;
+			background: #000;
+			border-radius: 50% 50% 0 0;
+			transform-origin:bottom center;
+		}
+		#div .sec{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -2px;
+			margin-top: -120px;
+			width: 4px;
+			height: 125px;
+			background: red;
+			border-radius: 50% 50% 0 0;
+			transform-origin:bottom center;
+			z-index: 7;
+		}
+		#div .odd{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -10px;
+			margin-top: -10px;
+			width: 20px;
+			height: 20px;
+			background: -webkit-radial-gradient(#ccc,#000);
+			border-radius: 50%;
+			z-index: 8;
+		}
+		#div span{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 2px;
+			height: 8px;
+			margin-left: -1px;
+			background: #000;
+			transform-origin: center 150px;
+		}
+		#div span.on{
+			width: 5px;
+			height: 12px;
+			margin-left: -3px;
+		}
+		#div span b{
+			position: absolute;
+			top: 20px;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			margin-left: -10px;
+			font-size: 40px;
+			text-shadow: 2px 2px #000;
+		}
+	</style>
+	<script>
+		function rnd(n,m){
+			return parseInt(Math.random()*(m-n)+n);
+		}
+		window.onload=function(){
+			var oDiv=document.getElementById('div');
+			var H=document.querySelector('.hour');
+			var M=document.querySelector('.min');
+			var S=document.querySelector('.sec');
+			var D=document.querySelector('.odd');
+			var aSpan=document.getElementsByTagName('span');
+			var aB=document.getElementsByTagName('b');
+			function clock(){
+				var oDate=new Date();
+				var oH=oDate.getHours();
+				var oM=oDate.getMinutes();
+				var oS=oDate.getSeconds();
+				var oMs=oDate.getMilliseconds();
+				H.style.transform='rotate('+(oH*30+oM/60*30)+'deg)';
+				M.style.transform='rotate('+(oM*6+oS/60*6)+'deg)';
+				S.style.transform='rotate('+(oS*6+oMs/1000*6)+'deg)';
+			}
+			function color(){
+				H.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				M.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				S.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				D.style.background='-webkit-radial-gradient(rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+'),rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+'))';
+				oDiv.style.background='rgba('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+',0.3)';
+				oDiv.style.color='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				oDiv.style.border='15px solid rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				for(var i=0;i<aB.length;i++){
+					aB[i].style.color='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				}
+				for(var i=0;i<aSpan.length;i++){
+					aSpan[i].style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+				}				
+			}
+			clock();
+			color();
+			var timer1=setInterval(clock,1000);
+			var timer2=setInterval(color,1000);
+
+			//
+			for(var i=0;i<60;i++){
+				var oSpan=document.createElement('span');
+				oSpan.style.transform='rotate('+(i*6)+'deg)';
+				if(i%5==0){
+					oSpan.classList='on';
+					oSpan.innerHTML='<b>'+(i==0?12:i/5)+'</b>';
+					oSpan.children[0].style.transform='rotate('+(-i*6)+'deg)';
+				}
+				oDiv.appendChild(oSpan);
+			}
+			oDiv.onmousedown=function(ev){
+				var oEvent=ev || event;
+				var disX=oEvent.clientX-oDiv.offsetLeft;
+				var disY=oEvent.clientY-oDiv.offsetTop;
+				document.onmousemove=function(ev){
+					var oEvent=ev || event;
+					var l=oEvent.clientX-disX;
+					var t=oEvent.clientY-disY;
+					oDiv.style.left=l+'px';
+					oDiv.style.top=t+'px';
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div">
+		香❤❤香
+		<div class="hour"></div>
+		<div class="min"></div>
+		<div class="sec"></div>
+		<div class="odd"></div>
+		<!-- <span>
+			<b>12</b>
+		</span> -->
+	</div>
+</body>
+</html>

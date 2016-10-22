@@ -1,0 +1,74 @@
+header{
+	width: 16rem;
+	height: 2.525rem;
+	background:-webkit-linear-gradient(#fff,#ebebeb);
+}
+header .left{
+	display: block;
+	width: 3.175rem;
+	height: 1.55rem;
+	background: url(../img/btn.png) no-repeat;
+	background-size: cover;
+	margin: 0.5rem;
+	float: left;
+}
+header h2{
+	width: 4.5rem;
+	height: 0.8rem;
+	font-size: 0.8rem;
+	text-align: center;
+	line-height: 0.8rem;
+	color: #333;
+	font-weight: bold;
+	margin-left: 1.8rem;
+	margin-top: 0.725rem;
+	float: left;	
+	background: none;
+}
+section{
+	width: 16rem;
+}
+section .sort{
+	width: 16rem;
+	height: 2rem;
+	overflow: hidden;
+	display: -webkit-box;
+	border-bottom: 1px solid #dcdcdc;
+}
+section .sort .sort1{
+	-webkit-box-flex: 1;
+	display: block;
+	text-align: center;
+	line-height: 2rem;
+	font-size: 0.575rem;
+	color: #999;
+	border-right: 1px solid #dcdcdc;
+}
+section .sort .sort1.om{
+	color: #d51942;
+}
+section .sort .sort1.on{
+	border-right: none; 
+}
+section .tag{
+	width: 16rem;
+	display: none;
+}
+section .tag li{
+	width: 16rem;
+	height: 5rem;
+	border-bottom: 1px solid #ececec;
+	border-top: 1px solid #ececec;
+	padding: 0.7rem 0 0.75rem 0;
+	overflow: hidden;
+}
+section .tag li .tag1{
+	width: 5.5rem;
+	height: 5rem;
+	float: left;
+}
+section .tag li .tag2{
+	width: 10rem;
+	height: 5rem;
+	float: left;
+}

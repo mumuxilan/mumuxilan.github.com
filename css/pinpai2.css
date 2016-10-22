@@ -1,0 +1,145 @@
+#link2{
+	display: none;
+}
+header{
+	width: 16rem;
+	height: 2.525rem;
+	background:-webkit-linear-gradient(#fff,#ebebeb);
+}
+header .left{
+	display: block;
+	width: 3.175rem;
+	height: 1.55rem;
+	background: url(../img/btn.png) no-repeat;
+	background-size: cover;
+	margin: 0.5rem;
+	float: left;
+}
+header h2{
+	width: 4.5rem;
+	height: 0.8rem;
+	font-size: 0.8rem;
+	text-align: center;
+	line-height: 0.8rem;
+	color: #333;
+	font-weight: bold;
+	margin-left: 1.8rem;
+	margin-top: 0.725rem;
+	float: left;	
+	background: none;
+}
+section{
+	width: 16rem;
+}
+section .tag3{
+	width: 16rem;
+	height: 8.025rem;
+	position: relative;
+}
+section .tag3 .tag4{
+	width: 16rem;
+	height: 8.025rem;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+section .tag5{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 16rem;
+	height: 1rem;
+	background: rgba(0,0,0,0.5);
+	font-size: 0.6rem;
+	text-indent: 0.4rem;
+	line-height: 1rem;
+	color: #fff;
+}
+section .tag6{
+	width: 16rem;
+	height: 2.2rem;
+	border-bottom: 0.025rem solid #b4b4b4;
+	box-shadow: inset 0 0 0.5rem 0.05rem #b4b4b4;
+}
+section .tag6 .tag7{
+	width: 3.5rem;
+	height: 2.2rem;
+	background:url(../img/logo2.png) no-repeat;
+	background-size: cover;
+	float: left;
+}
+section .tag6 .tag8{
+	width: 4.25rem;
+	height: 2.2rem;
+	background:url(../img/j15.png) no-repeat;
+	background-size: cover;
+	float: right;
+}
+section .sort2{
+	width: 16rem;
+}
+section .sort2 .sort3{
+	width: 16rem;
+	height: 5rem;
+	border-bottom: 0.025rem solid #dcdcdc;
+	overflow: hidden;
+}
+section .sort3 .sort4{
+	width: 5.6rem;
+	height: 3.6rem;
+	border: 0.025rem solid #dcdcdc;
+	margin: 0.5rem 0.7rem 0.5rem 0.5rem;
+	padding: 0.175rem;
+	float: left;
+}
+section .sort3 .sort4.on{
+	margin-left: 0;
+}
+section .sort3 .sort4 img{
+	width: 5.6rem;
+	height: 3.6rem;
+}
+section .sort3 .sort5{
+	width: 7.65rem;
+	height: 4rem;
+	margin-top: 0.5rem;
+	float: left;
+}
+section .sort3 .sort5.on{
+	width: 7.5rem;
+}
+section .sort3 .sort5 .sort6{
+	width: 7.4rem;
+	font-size: 0.65rem;
+	font-weight: bold;
+	line-height: 0.9rem;
+	color: #111;
+	margin-bottom: 0.425rem;
+}
+section .sort3 .sort5 .sort6.on{
+	width: 7.5rem;
+}
+section .sort3 .sort5 .sort6 span{
+	color: #d51938;
+}
+section .sort3 .sort5 .sort7{
+	height: 0.5rem;
+	margin-bottom: 0.55rem;
+}
+section .sort3 .sort5 .sort7 .sort8{
+	font-size: 0.6rem;
+	color: #c3213c;
+	margin-right: 0.625rem;
+}
+section .sort3 .sort5 .sort7 .sort8 span{
+	font-size: 0.75rem;
+}
+section .sort3 .sort5 .sort7 .sort9{
+	font-size: 0.5rem;
+	color: #999;
+	text-decoration: line-through;
+}
+section .sort3 .sort5 .sort10{
+	font-size: 0.45rem;
+	color: #999;
+}

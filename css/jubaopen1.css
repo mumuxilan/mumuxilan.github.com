@@ -1,0 +1,121 @@
+header{
+	width: 16rem;
+	height: 2.525rem;
+	background:-webkit-linear-gradient(#fff,#ebebeb);
+}
+header .left{
+	display: block;
+	width: 3.175rem;
+	height: 1.55rem;
+	background: url(../img/btn.png) no-repeat;
+	background-size: cover;
+	margin: 0.5rem;
+	float: left;
+}
+header h2{
+	width: 4.5rem;
+	height: 0.8rem;
+	font-size: 0.8rem;
+	text-align: center;
+	line-height: 0.8rem;
+	color: #333;
+	font-weight: bold;
+	margin-left: 1.8rem;
+	margin-top: 0.725rem;
+	float: left;	
+	background: none;
+}
+section{
+	width: 16rem;
+}
+section .sort{
+	width: 16rem;
+	height: 2rem;
+	overflow: hidden;
+	display: -webkit-box;
+	border-bottom: 1px solid #dcdcdc;
+}
+section .sort .sort1{
+	-webkit-box-flex: 1;
+	display: block;
+	text-align: center;
+	line-height: 2rem;
+	font-size: 0.575rem;
+	color: #999;
+	border-right: 1px solid #dcdcdc;
+}
+section .sort .sort1.om{
+	color: #d51942;
+}
+section .sort .sort1.on{
+	border-right: none; 
+}
+section .jewel{
+	width: 16rem;
+	height: 5.7rem;
+	background: url(../img/j18.png) no-repeat;
+	background-size: cover;
+}
+section .jewel1{
+	width: 16rem;
+	height: 0.975rem;
+	padding-left: 6.9rem;
+	overflow: hidden;
+}
+section .jewel1 span{
+	width: 0.2rem;
+	height: 0.2rem;
+	background: #ccc;
+	border-radius: 50%;
+	margin-right: 0.3rem;
+	margin-top: 0.4rem;
+	float: left;
+}
+section .jewel1 span.on{
+	background: #333;
+}
+section .jewel2{
+	width: 16rem;
+	display: none;
+}
+section .jewel2 .jewel3{
+	width: 16rem;
+	height: 4rem;
+	border-top: 1px solid #dcdcdc;
+	overflow: hidden;
+}
+section .jewel2 .jewel3 .jewel4{
+	width: 1.95rem;
+	height: 1.95rem;
+	display: block;
+	margin: 1rem 1.2rem 0 0.85rem;
+	float: left;
+}
+section .jewel2 .jewel3 .jewel5{
+	width: 10.75rem;
+	height: 2.975rem;
+	padding-top: 1.025rem;
+	float: left;
+}
+section .jewel2 .jewel3 .jewel5 span{
+	width: 2.75rem;
+	height: 0.875rem;
+	display: block;
+	margin-bottom: 0.5rem;
+}
+section .jewel2 .jewel3 .jewel5 p{
+	height: 0.6rem;
+	font-size: 0.6rem;
+	line-height: 0.6rem;
+	color: #999;
+}
+section .jewel2 .jewel3 .jewel6{
+	width: 0.35rem;
+	height: 4rem;
+	text-align: center;
+	line-height: 4rem;
+	font-size: 1rem;
+	font-weight: bold;
+	color: #ccc;
+	float: left; 
+}

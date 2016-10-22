@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+*{padding:0; margin:0;  font-size:12px;}
+ul li,dl dt dd,ol li{padding:0; margin:0;}
+li{list-style:none;}
+p,body{margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:normal;}
+i,em{font-style:normal;}
+a{text-decoration:none; color:#000;}
+.fl{float:left;}
+.fr{float:right;}
+.clearfix:after{display:block; content:""; clear:both;}
+.clearfix{zoom:1;}
+
+table{border-collapse:collapse;}
+th,td{border:1px solid #000; padding:0;}
+a img{border:none;}
+//opacity: 0.3;
+// filter:alpha(opacity=30); 

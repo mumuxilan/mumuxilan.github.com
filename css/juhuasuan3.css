@@ -1,0 +1,81 @@
+header{
+	width: 16rem;
+	height: 2.525rem;
+	background:-webkit-linear-gradient(#fff,#ebebeb);
+}
+header .left{
+	display: block;
+	width: 3.175rem;
+	height: 1.55rem;
+	background: url(../img/btn.png) no-repeat;
+	background-size: cover;
+	margin: 0.5rem;
+	float: left;
+}
+header h2{
+	width: 4.5rem;
+	height: 0.8rem;
+	font-size: 0.8rem;
+	text-align: center;
+	line-height: 0.8rem;
+	color: #333;
+	font-weight: bold;
+	margin-left: 1.8rem;
+	margin-top: 0.725rem;
+	float: left;
+}
+section .city{
+	width: 16rem;
+	height: 2.2rem;
+	position: relative;
+}
+section .city .city1{
+	position: absolute;
+	left: 0.4rem;
+	top: 0.675rem;
+	width: 0.7rem;
+	height: 0.85rem;
+	background: url(../img/bck20.png) no-repeat;
+	background-size: cover;
+}
+section .city .city2{
+	position: absolute;
+	left: 1.55rem;
+	top: 0.65rem;
+	width: 7rem;
+	height: 0.8rem;
+	font-size: 0.8rem;
+	line-height: 0.8rem;
+	color: #000;
+	font-weight: bold;
+}
+section .city .city3{
+	position: absolute;
+	right: 2.4rem;
+	top: 0.825rem;
+	width: 0.65rem;
+	height: 0.7rem;
+	background: url(../img/bck21.png) no-repeat;
+	background-size: cover;
+}
+section dl .city4{
+	width: 16rem;
+	height: 1.5rem;
+	background: #eee;
+	font-size: 0.65rem;
+	line-height: 1.5rem;
+	text-indent: 0.45rem;
+	color: #999;
+	font-weight: bold;
+}
+section dl .city5{
+	width: 16rem;
+	height: 2.175rem;
+	background: #f8f8f8;
+	font-size: 0.75rem;
+	line-height: 2.175rem;
+	text-indent: 1.55rem;
+	color: #000;
+	font-weight: bold;
+	border-top: 0.025rem solid #dedede;
+}

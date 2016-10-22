@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<title>Document</title>
+	<script>
+		;(function(win,doc){
+			function change(){
+				doc.documentElement.style.fontSize=doc.documentElement.clientWidth/16+'px';
+				// doc.documentElement.style.fontSize=doc.documentElement.clientWidth*20/320+'px';
+			}
+			change();
+			win.addEventListener('resize',change,false);
+		})(window,document);
+	</script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		#div{
+			width: 16rem;
+			height: 9rem;
+			overflow: hidden;
+		}
+		#ul{
+			width: 112rem;
+			height: 9rem;
+			overflow: height;
+		}
+		#ul li{
+			width: 16rem;
+			height: 9rem;
+			font-size: 5rem;
+			text-align: center;
+			line-height: 9rem;
+			float: left;
+		}
+	</style>
+	<script>
+		// 拖拽的时候给其加运动并且无缝轮播
+		document.addEventListener('DOMContentLoaded',function(){
+			var oUl=document.getElementById('ul');
+			var aLi=oUl.getElementsByTagName('li');
+			var x=0;
+			var iNow=1;
+			var bReady=true;
+			oUl.style.webkitTransform='translate('+-iNow*aLi[0].offsetWidth+'px)';
+			x=-iNow*aLi[0].offsetWidth;
+			document.addEventListener('touchstart', function(ev){
+                ev.preventDefault();
+            }, false);
+			oUl.addEventListener('touchstart',function(ev){
+				if(!bReady){
+					return;
+				}
+				bReady=false;
+				var start=ev.targetTouches[0].pageX;
+				var disX=ev.targetTouches[0].pageX-x;
+				oUl.style.webkitTransition='none';
+				function fnMove(ev){
+					x=ev.targetTouches[0].pageX-disX;
+					oUl.style.webkitTransform='translate('+x+'px)';
+				}
+				function fnEnd(ev){
+					var end=ev.changedTouches[0].pageX;
+					if(Math.abs(end-start)>20){
+						if(end-start>0){
+							iNow--;
+							if(iNow<0){
+								iNow=0;
+							}
+						}else{
+							iNow++;
+							if(iNow==aLi.length){
+								iNow=aLi.length-1;
+							}
+						}
+					}
+					if(end==start){
+						bReady=true;
+					}
+					oUl.style.webkitTransition='1s all ease';
+					oUl.style.webkitTransform='translate('+-iNow*aLi[0].offsetWidth+'px)';
+					x=-iNow*aLi[0].offsetWidth;
+					oUl.addEventListener('webkitTransitionEnd',tran,false);
+					document.removeEventListener('touchmove',fnMove,false);
+					document.removeEventListener('touchend',fnEnd,false);
+				}
+				function tran(){
+					if(iNow==aLi.length-1){
+						iNow=1;
+					}
+					if(iNow==0){
+						iNow=aLi.length-2;						
+					}
+					oUl.style.webkitTransition='none';
+						oUl.style.webkitTransform='translate('+-iNow*aLi[0].offsetWidth+'px)';
+						x=-iNow*aLi[0].offsetWidth;
+					bReady=true;
+					oUl.removeEventListener('webkitTransitionEnd',tran,false);
+				}
+				
+				document.addEventListener('touchmove',fnMove,false);
+				document.addEventListener('touchend',fnEnd,false);
+				ev.preventDefault();
+			},false);
+		},false);
+	</script>
+</head>
+<body>
+	<div id="div">
+		<ul id="ul">
+			<li style="background:#f00;">坏</li>
+			<li style="background:#00f;">小</li>
+			<li style="background:#0ff;">破</li>
+			<li style="background:#0f0;">孩</li>
+			<li style="background:#ff0;">最</li>
+			<li style="background:#f00;">坏</li>
+			<li style="background:#00f;">小</li>
+		</ul>
+	</div>
+</body>
+</html>
