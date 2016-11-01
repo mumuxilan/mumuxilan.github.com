@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<title>聚划算生活团-城市选择</title>
+	<script>
+		;(function(win,doc){
+			function change(){
+				doc.documentElement.style.fontSize=doc.documentElement.clientWidth/16+'px';
+				// doc.documentElement.style.fontSize=doc.documentElement.clientWidth*20/320+'px';
+			}
+			change();
+			win.addEventListener('resize',change,false);
+		})(window,document);
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/juhuasuan3.css">
+	<script src='js/juhuasuan.js'></script>
+</head>
+<body>
+	<header>
+		<span class="left" id="CitySelect"></span>
+		<h2>切换城市</h2>
+	</header>
+	<section id="CitySelect1">
+		<div class="city">
+			<span class="city1"></span>
+			<span class="city2" id="CitySelect2">当前位置—杭州</span>
+			<span class="city3"></span>
+		</div>
+		<dl>
+			<dt class="city4">热门城市</dt>
+			<dd class="city5">南京</dd>
+			<dd class="city5">福州</dd>
+			<dd class="city5">武汉</dd>
+			<dd class="city5">天津</dd>
+		</dl>
+		<dl>
+			<dt class="city4">A</dt>
+			<dd class="city5">鞍山</dd>
+			<dd class="city5">安庆</dd>
+			<dd class="city5">澳门</dd>
+			<dd class="city5">九寨沟</dd>
+		</dl>
+	</section>
+</body>
+</html>

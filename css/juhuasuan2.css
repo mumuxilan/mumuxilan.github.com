@@ -261,6 +261,7 @@ footer .scan1 .city{
 	height: 1.25rem;
 	margin-top: 0.7rem;
 	overflow: hidden;
+	display: none;
 }
 footer .scan1 .city .city1{
 	width: 4.4rem;

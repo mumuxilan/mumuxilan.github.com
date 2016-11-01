@@ -144,6 +144,7 @@
 			var oFooter=document.getElementById('footer');
 			var oScan=document.getElementById('scan');
 			var oScan2=document.getElementById('scan2');
+			var oCity=document.getElementById('city');
 			var aA=oScan2.getElementsByTagName('a');
 			var aUl=oFooter.getElementsByTagName('ul');
 			//
@@ -164,10 +165,42 @@
 					for(var j=0;j<aA.length;j++){
 						aA[j].className='on';
 						aUl[j].style.display='none';
+						oCity.style.display='none';
+					}
+					if(this.index%2){
+						oCity.style.display='block';
 					}
 					this.className='';
 					aUl[this.index].style.display='block';
 				},false)
+			}
+		}
+	},false);
+})();
+;(function(){
+	document.addEventListener('DOMContentLoaded',function(){
+		if(document.getElementById('CitySelect')){
+			var oCitySelect=document.getElementById('CitySelect');
+			var oCitySelect1=document.getElementById('CitySelect1');
+			var oCitySelect2=document.getElementById('CitySelect2');
+			var aCity=document.getElementsByTagName('dd');
+			var live=[];
+			for(var i=0;i<aCity.length;i++){
+				aCity[i].addEventListener('touchend',function(){
+					live=[];
+					oCitySelect2.innerHTML='当前位置—'+this.innerHTML;
+					live.push(this.innerHTML);
+					console.log(live);	
+				},false);
+			}
+			oCitySelect.addEventListener('touchend',function(){				
+				history.go(-1);
+			},false);
+			if(document.getElementById('right')){
+				var oLive=document.getElementById('live');
+				alert(oLive)
+				alert(oLive.innerHTML)
+				oLive.innerHTML=live[0];
 			}
 		}
 	},false);
