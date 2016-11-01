@@ -98,6 +98,7 @@
 		if(document.getElementById('list1')){
 			var oSort=document.getElementById('sort');
 			var oList1=document.getElementById('list1');
+			var oLive=document.getElementById('live');
 			var aA=oSort.getElementsByTagName('a');
 			var aUl1=oList1.getElementsByTagName('ul');
 
@@ -112,6 +113,7 @@
 			}
 			aA[count-1].className='sort1 om';
 			aUl1[count-1].style.display='block';
+			oLive.innerHTML=aA[count-1].innerHTML;
 			for(var i=0;i<aA.length;i++){
 				aA[i].index=i;
 				aA[i].addEventListener('touchend',function(){
@@ -121,7 +123,7 @@
 					}
 					this.className='sort1 om';
 					aUl1[this.index].style.display='block';
-
+					oLive.innerHTML=this.innerHTML;
 				},false);
 			}
 		}		
@@ -151,12 +153,14 @@
 
 			//显示隐藏
 			oRight.addEventListener('touchend',function(){
+				// oFooter.style.display='block';
 				oFooter.style.webkitTransition='1s all ease';
 				oFooter.style.webkitTransform='translate3d(-16rem,0,0)';
 			},false);
 			oScan.addEventListener('touchend',function(){
 				oFooter.style.webkitTransition='1s all ease';
 				oFooter.style.webkitTransform='translate3d(0,0,0)';
+				// oFooter.style.display='none';
 			},false);
 			//切换
 			for(var i=0;i<aA.length;i++){
