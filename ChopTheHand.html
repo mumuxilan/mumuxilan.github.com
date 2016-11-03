@@ -41,7 +41,8 @@
 			height: 10.98rem;
 			background:url(img/chop2.png);
 			background-size: cover;
-			transform: translate(0rem,0rem);
+			transform:rotateY(0deg) translate(0rem,0rem);
+			-webkit-transform-origin:center center;
 		}
 		.fmart{
 			width: 10.92rem;
@@ -55,7 +56,8 @@
 			height: 4.8rem;
 			background:url(img/chop1.png);
 			background-size: cover;
-			transform: translate(11.9rem,5.55rem);
+			transform:rotate(0deg) translate(11.9rem,5.55rem);
+			-webkit-transform-origin:center center;
 		}
 		.likeChop{
 			
@@ -89,7 +91,8 @@
 			font-family: '黑体';
 			text-align: center;
 			line-height: 1.88rem;
-			transform: translate(2.46rem,26.68rem);
+			transform:rotate(0deg) translate(2.46rem,26.68rem);
+			-webkit-transform-origin:center center;
 		}
 	</style>
 	<script>
@@ -97,19 +100,19 @@
 			setTimeout(function(){
 				var oBody=document.getElementById('body');
 				var aDiv=oBody.getElementsByTagName('div');
-				aDiv[0].style.transition='2s all ease-out';
-				aDiv[1].style.transition='2s all ease-out';
+				aDiv[0].style.transition='1s all ease-out';
+				aDiv[1].style.transition='1.5s all ease-out';
 				aDiv[2].style.transition='2s all ease-out';
-				aDiv[3].style.transition='2s all ease-out';
-				aDiv[4].style.transition='2s all ease-out';
-				aDiv[5].style.transition='5s all ease-out';
+				aDiv[3].style.transition='1s all ease-out';
+				aDiv[4].style.transition='1.5s all ease-out';
+				aDiv[5].style.transition='2s all ease-out';
 				//
-				aDiv[0].style.transform='translate(3.74rem,3.18rem)';
+				aDiv[0].style.transform='rotateY(720deg) translate(3.74rem,3.18rem)';
 				aDiv[1].style.transform='translate(-2.7rem,5.3rem)';
-				aDiv[2].style.transform='translate(4.36rem,5.55rem)';
+				aDiv[2].style.transform='rotate(1440deg) translate(4.36rem,5.55rem)';
 				aDiv[3].style.transform='translate(0rem,3.18rem)';
 				aDiv[4].style.transform='translate(2.46rem,4.98rem)';
-				aDiv[5].style.transform='translate(2.46rem,5.68rem)';
+				aDiv[5].style.transform='rotate(-720deg) translate(2.46rem,5.68rem)';
 			},1);
 			
 		},false);
