@@ -41,8 +41,9 @@
 			height: 10.98rem;
 			background:url(img/chop2.png);
 			background-size: cover;
-			transform:rotate(0deg) translate(0rem,0rem);
-			-webkit-transform-origin:0 0;
+			display: inline-block;
+			transform:rotateY(0deg) translate(0rem,0rem);
+			-webkit-transform-origin:center center;
 		}
 		.fmart{
 			width: 10.92rem;
@@ -58,6 +59,7 @@
 			background-size: cover;
 			transform:rotate(0deg) translate(11.9rem,5.55rem);
 			-webkit-transform-origin:center center;
+			z-index: 10;
 		}
 		.likeChop{
 			
@@ -100,6 +102,8 @@
 			setTimeout(function(){
 				var oBody=document.getElementById('body');
 				var aDiv=oBody.getElementsByTagName('div');
+				var count=0;
+				var timer=null;
 				aDiv[0].style.transition='1s all ease-out';
 				aDiv[1].style.transition='1.5s all ease-out';
 				aDiv[2].style.transition='2s all ease-out';
@@ -109,10 +113,23 @@
 				//
 				aDiv[0].style.transform='rotate(720deg) translate(3.74rem,3.18rem)';
 				aDiv[1].style.transform='translate(-2.7rem,5.3rem)';
-				aDiv[2].style.transform='rotate(1080deg) translate(4.36rem,5.55rem)';
+				// aDiv[2].style.transform='rotate(1080deg) translate(4.36rem,5.55rem)';
+				aDiv[2].style.transform='rotate(1080deg) translate(6rem,5.55rem)';
 				aDiv[3].style.transform='translate(0rem,3.18rem)';
 				aDiv[4].style.transform='translate(2.46rem,4.98rem)';
 				aDiv[5].style.transform='rotate(-720deg) translate(2.46rem,5.68rem)';
+				// transitionend
+				function move(){
+					count=-4;
+					aDiv[2].style.transform='translate('+count+'rem,5.55rem)';
+					timer=setInterval(function(){
+						clearInterval(timer);
+						count=6;
+						aDiv[2].style.transform='translate('+count+'rem,5.55rem)';
+					},2000);
+				}
+				aDiv[2].addEventListener('transitionend',move,false);
+
 			},1);
 			
 		},false);
